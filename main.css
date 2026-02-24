@@ -267,7 +267,7 @@ footer {
     display: block;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-@media(max-width: 768px) {
+
     nav ul li {
         opacity: 0;
         transition: opacity 0.4s ease 0.2s; /* fade delay */
@@ -276,7 +276,7 @@ footer {
     nav ul.show li {
         opacity: 1;
     }
-}
+
 /* OVERLAY */
 #overlay {
     position: fixed;
@@ -296,7 +296,6 @@ background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/photos/cyon
     opacity: 1;
     visibility: visible;
 }
-@media(max-width: 768px) {
     nav ul li {
         transform: translateX(20px);
         opacity: 0;
@@ -307,5 +306,15 @@ background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/photos/cyon
         transform: translateX(0);
         opacity: 1;
     }
+
+    .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/photos/cyon-logo-png_seeklogo-535750.png') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
 }
 }
