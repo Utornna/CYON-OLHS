@@ -58,7 +58,6 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: red;
     padding: 20px;
 }
 
@@ -264,6 +263,7 @@ footer {
         opacity: 1;
     }
 }
+
 
 
 
