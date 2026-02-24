@@ -193,7 +193,7 @@ footer {
     nav ul {
         display: flex;
         flex-direction: column;
-        background: #0a1f44;
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/photos/cyon-logo-png_seeklogo-535750.png') no-repeat center/cover;
         position: absolute;
         top: 70px;
         right: 0;
@@ -261,3 +261,4 @@ footer {
         opacity: 1;
     }
 }
+
