@@ -220,6 +220,9 @@ footer {
         font-size: 25px;
         cursor: pointer;
     }
+    .hero {
+         background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/photos/cyon-logo-png_seeklogo-535750.png') no-repeat center/cover;
+    }
 }
 @media(max-width: 768px) {
     nav ul li {
@@ -261,4 +264,5 @@ footer {
         opacity: 1;
     }
 }
+
 
