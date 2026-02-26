@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | CYON O.L.H.S</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/admin.css">
+</head>
+
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">CYON Admin</div>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul id="menu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/joinus.html">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div id="overlay" onclick="closeMenu()"></div>
+
+<section class="admin-section">
+    <h1>Registered Members</h1>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Baptized</th>
+                    <th>Date Joined</th>
+                </tr>
+            </thead>
+            <tbody id="membersTable">
+                <!-- Data will appear here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Firebase -->
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// 🔥 Paste same Firebase config here
+const firebaseConfig = {
+  apiKey: "AIzaSyBjRETADb8PghHbK2A-zBlKjV8gRKlCc8k",
+  authDomain: "cyon-olhs.firebaseapp.com",
+  projectId: "cyon-olhs",
+  storageBucket: "cyon-olhs.firebasestorage.app",
+  messagingSenderId: "196198940939",
+  appId: "1:196198940939:web:719f1b0b83818403f6620e"
+  /* measurementId: "G-QRNTM6YSJE" */
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const membersTable = document.getElementById("membersTable");
+
+async function fetchMembers() {
+    const querySnapshot = await getDocs(collection(db, "members"));
+
+    querySnapshot.forEach((doc) => {
+        const data = doc.data();
+
+        const row = `
+            <tr>
+                <td>${data.fullName || ""}</td>
+                <td>${data.phone || ""}</td>
+                <td>${data.email || ""}</td>
+                <td>${data.gender || ""}</td>
+                <td>${data.baptized || ""}</td>
+                <td>${new Date(data.createdAt.seconds * 1000).toLocaleDateString()}</td>
+            </tr>
+        `;
+
+        membersTable.innerHTML += row;
+    });
+}
+
+fetchMembers();
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
