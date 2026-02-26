@@ -230,6 +230,67 @@ footer {
     font-size: 25px;
     cursor: pointer;
 }
+.back{
+    text-align: left;
+    font-style: oblique;
+    color: antiquewhite;
+    text-decoration-line: none;
+    text-decoration: solid;
+    font-size: 20px;
+}
+.more{
+    text-align: center;
+    font-size: 40px;
+    text-decoration: solid;
+}
+
+/* Contact Page */
+.sub-header {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('/photos/cyon-logo-png_seeklogo-535750.png') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    position: static;
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    padding: 60px 10%;
+    flex-wrap: wrap;
+}
+
+.contact-form,
+.contact-info {
+    flex: 1 1 400px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-info p {
+    margin-bottom: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: white;
+    margin-top: 50px;
+}
 
 @media(max-width: 768px) {
     nav ul {
@@ -284,8 +345,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-/*     background: rgba(0,0,0,0.5); */ /* semi-transparent dark */
-background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/photos/cyon-logo-png_seeklogo-535750.png') no-repeat center/cover;
+    background: rgba(0,0,0,0.5); 
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
