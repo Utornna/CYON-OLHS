@@ -53,7 +53,7 @@ nav ul li a:hover {
 /* HERO */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.seeklogo.com/logo-png/53/1/cyon-logo-png_seeklogo-535750.png') no-repeat center/cover;
+    background-image: /* linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), img */ 'https://images.seeklogo.com/logo-png/53/1/cyon-logo-png_seeklogo-535750.png' no-repeat center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -378,4 +378,5 @@ footer {
     padding: 20px;
 }
 }
+
 
