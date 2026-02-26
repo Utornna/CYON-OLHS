@@ -1,0 +1,59 @@
+.join-hero {
+    background: #0a1f44;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.join-hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* FORM SECTION */
+.form-section {
+    padding: 60px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.join-form {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: gold;
+    outline: none;
+}
+
+/* Submit Button */
+.join-form .btn {
+    width: 100%;
+    margin-top: 10px;
+}
