@@ -10,8 +10,6 @@
 </head>
 
 <body>
-
-
 <header class="sub-header">
     <h1>Contact CYON O.L.H.S</h1>
     <p>We would love to hear from you</p>
@@ -20,7 +18,7 @@
 
 <section class="contact-container">
 
-   
+
     <div class="contact-form">
         <h2>Send a Message</h2>
 
@@ -33,14 +31,15 @@
         </form>
     </div>
 
-
+    
     <div class="contact-info">
         <h2>Our Location</h2>
         <p><strong>Church:</strong> Our Lady Health of the Sick (O.L.H.S)</p>
         <p><strong>Organization:</strong> Catholic Youth Organization of Nigeria (CYON)</p>
         <p><strong>Phone:</strong> +234 812 355 1235</p>
-         <p><strong>Email:</strong> ourladyhealthofthesickcyon@gmail.com</p>
-      
+        <p><strong>Email:</strong> ourladyhealthofthesickcyon@gmail.com</p>
+
+       
         <iframe 
             src="https://www.google.com/maps?q=Dead End, Mangoro,Lagos,Nigeria&output=embed"
             width="100%" 
@@ -97,6 +96,30 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
 });
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+<script>
+(function(){
+    emailjs.init("OLHS-CYON");
+})();
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.send("service_q9257ko", "template_p037vgl", {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+    })
+    .then(function(response) {
+        alert("Message sent successfully!");
+        document.getElementById("contactForm").reset();
+    }, function(error) {
+        alert("Failed to send message.");
+        console.log(error);
+    });
+});
+</script>
 </body>
 </html>
